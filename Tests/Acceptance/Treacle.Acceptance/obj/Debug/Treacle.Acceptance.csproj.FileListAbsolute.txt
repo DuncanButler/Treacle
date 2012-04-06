@@ -1,0 +1,14 @@
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.Acceptance.dll
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.Acceptance.pdb
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.Acceptance.pri
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\Treacle.Acceptance.dll
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\Treacle.Acceptance.pdb
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\priconfig.xml.intermediate
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\layout.resfiles.intermediate
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\resources.resfiles.intermediate
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\pri.resfiles.intermediate
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\priconfig.xml
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\layout.resfiles
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\resources.resfiles
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\pri.resfiles
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\LanguageQualifiers.txt

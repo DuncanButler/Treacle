@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="3673DD9A-0FC0-4D91-8ABE-E714324091C4" ModuleId="Treacle" />
+  <Module PersistentId="548877D0-7D4A-4011-8931-96CE0CA4647C" ModuleId="Treacle.Tests" />
+  <Module PersistentId="B6BC3A27-84CC-4684-843E-E1480F0DB5EC" ModuleId="Treacle.Acceptance" />
+  <Module PersistentId="666ACCB5-1B49-4D46-8FB6-E82448F061D3" ModuleId="Treacle.Tasks" />
+</Modules>

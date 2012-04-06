@@ -1,0 +1,5 @@
+C:\@Source\Treacle\Production\Treacle\bin\Debug\Treacle.dll
+C:\@Source\Treacle\Production\Treacle\bin\Debug\Treacle.pdb
+C:\@Source\Treacle\Production\Treacle\obj\Debug\Treacle.csprojResolveAssemblyReference.cache
+C:\@Source\Treacle\Production\Treacle\obj\Debug\Treacle.dll
+C:\@Source\Treacle\Production\Treacle\obj\Debug\Treacle.pdb

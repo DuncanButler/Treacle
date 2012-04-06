@@ -1,0 +1,6 @@
+C:\@Source\Treacle\Deployment\Treacle.Tasks\bin\Debug\Treacle.Tasks.exe.config
+C:\@Source\Treacle\Deployment\Treacle.Tasks\bin\Debug\Treacle.Tasks.exe
+C:\@Source\Treacle\Deployment\Treacle.Tasks\bin\Debug\Treacle.Tasks.pdb
+C:\@Source\Treacle\Deployment\Treacle.Tasks\obj\Debug\Treacle.Tasks.csprojResolveAssemblyReference.cache
+C:\@Source\Treacle\Deployment\Treacle.Tasks\obj\Debug\Treacle.Tasks.exe
+C:\@Source\Treacle\Deployment\Treacle.Tasks\obj\Debug\Treacle.Tasks.pdb
