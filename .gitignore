@@ -1,0 +1,7 @@
+Resharper*
+Bin
+Obj
+_resharper.*
+*.ncrunchsolution
+
+
