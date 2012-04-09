@@ -5,3 +5,5 @@ C:\@Source\Treacle\Tests\Unit\Treacle.Tests\obj\Debug\Treacle.Tests.dll
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\obj\Debug\Treacle.Tests.pdb
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\nunit.framework.dll
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\nunit.framework.xml
+C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\Treacle.dll
+C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\Treacle.pdb

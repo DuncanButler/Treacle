@@ -19,15 +19,15 @@ Scenario: adding a parameter to the gateway
 	And I did create a gateway factory
 	And I did create a database gateway
 	When I attempt to add a database parameter to the gateway
-	Then I should see the gateway parameters count 'has increased by one'
+	Then I should see the gateway parameters count equal '1'
 
 @TreacleDBGateway
 Scenario: calling a stored procedure that returns nothing
 	Given I am a developer
 	And I did create a gateway factory
 	And I did create a database gateway
-	And I did add a parameter containing, name 'Duncan'
-	When I execute the procedure, name 'spInsertName'
+	And I did add a parameter containing, parameterName '@name' parameterValue 'test'
+	When I attempt to execute the procedure, procedureName 'spInsertName'
 	Then I should see that the database is updated with 'the name Duncan'
 	And I should see that the gateway connection is 'closed'
 

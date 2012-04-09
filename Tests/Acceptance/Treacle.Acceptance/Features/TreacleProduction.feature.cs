@@ -110,7 +110,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 21
  testRunner.When("I attempt to add a database parameter to the gateway");
 #line 22
- testRunner.Then("I should see the gateway parameters count \'has increased by one\'");
+ testRunner.Then("I should see the gateway parameters count equal \'1\'");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -131,9 +131,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.And("I did create a database gateway");
 #line 29
- testRunner.And("I did add a parameter containing, name \'Duncan\'");
+ testRunner.And("I did add a parameter containing, parameterName \'@name\' parameterValue \'test\'");
 #line 30
- testRunner.When("I execute the procedure, name \'spInsertName\'");
+ testRunner.When("I attempt to execute the procedure, procedureName \'spInsertName\'");
 #line 31
  testRunner.Then("I should see that the database is updated with \'the name Duncan\'");
 #line 32

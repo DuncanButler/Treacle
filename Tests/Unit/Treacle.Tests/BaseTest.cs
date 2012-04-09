@@ -41,6 +41,18 @@ namespace Treacle.Tests
 
             return stack.GetFrame(2).GetMethod().Name.Replace("_", " ");
         }
+    }
 
+    public static class BDDAssertions
+    {
+         public static void IsEqualTo<T>(this T actual, T expected)
+         {
+             Assert.That(actual,Is.EqualTo(expected));
+         }
+
+         public static void IsGreaterThan<T>(this T actual, T expected)
+         {
+             Assert.That(actual,Is.GreaterThan(expected));
+         }
     }
 }

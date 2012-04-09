@@ -10,3 +10,5 @@ C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\Treacle.Accepta
 C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\obj\Debug\Treacle.Acceptance.pdb
 C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.dll
 C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.pdb
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.Tests.dll
+C:\@Source\Treacle\Tests\Acceptance\Treacle.Acceptance\bin\Debug\Treacle.Tests.pdb

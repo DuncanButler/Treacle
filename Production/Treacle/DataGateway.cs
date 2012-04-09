@@ -7,17 +7,40 @@ namespace Treacle
     public class DataGateway : IDbGateway
     {
         readonly string _connectionString;
-        List<IDataParameter> _dataParameters;
 
         public DataGateway(string connectionString)
         {
             _connectionString = connectionString;
-            _dataParameters = new List<IDataParameter>();
+            Parameters = new List<IDataParameter>();
         }
 
-        public void AddParameter(string parameterName, object value)
+        public IList<IDataParameter> Parameters { get; private set; }
+        
+        public void AddIntegerInputParameter(string name, int value)
         {
-            _dataParameters.Add(new SqlParameter(parameterName,value));
+            Parameters.Add(new SqlParameter(name, SqlDbType.Int) {Value = value, Direction = ParameterDirection.Input});
+        }
+
+        public void AddVarCharInputParameter(string name, string value, int length)
+        {
+            Parameters.Add(new SqlParameter(name, SqlDbType.NVarChar,length){Value = value,Direction = ParameterDirection.Input});
+        }
+
+        public void ExecuteNonQuery(string procedureName)
+        {
+            //var connection = new SqlConnection(_connectionString);
+            //var command = connection.CreateCommand();
+            //command.CommandText = procedureName;
+            //command.CommandType = CommandType.StoredProcedure;
+
+            //foreach (var parameter in Parameters)
+            //{
+            //    command.Parameters.Add(parameter);
+            //}
+
+            //connection.Open();
+            //command.ExecuteNonQuery();
+            //connection.Close();
         }
     }
 }

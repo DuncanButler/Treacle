@@ -19,6 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treacle.Tasks", "Deployment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treacle.Acceptance", "Tests\Acceptance\Treacle.Acceptance\Treacle.Acceptance.csproj", "{46C97E8E-DDF0-4B98-A153-B5FBB3DCAC28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestDatabase", "TestDatabase", "{CC14CF27-557B-406D-8834-54BBDCB6F468}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\TestDatabase\TestDatabase.mdf = Tests\TestDatabase\TestDatabase.mdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -81,6 +86,7 @@ Global
 		{548877D0-7D4A-4011-8931-96CE0CA4647C} = {E317BB76-CBEE-4A92-BD17-872D043ACC4F}
 		{666ACCB5-1B49-4D46-8FB6-E82448F061D3} = {71752CB7-FB20-4B0B-8AD7-472F574BD060}
 		{C4A31CE9-9499-452B-A0D9-287A6FDB1649} = {9260B469-A9F1-4D07-A2BA-F57C2D5A16EB}
+		{CC14CF27-557B-406D-8834-54BBDCB6F468} = {9260B469-A9F1-4D07-A2BA-F57C2D5A16EB}
 		{E317BB76-CBEE-4A92-BD17-872D043ACC4F} = {9260B469-A9F1-4D07-A2BA-F57C2D5A16EB}
 	EndGlobalSection
 EndGlobal
