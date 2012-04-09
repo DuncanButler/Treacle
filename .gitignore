@@ -1,11 +1,14 @@
-ReSharper*
-Bin/
-debug/
-Obj/
-
-_ReSharper.*
-*.ncrunchsolution
+*resharper.user
+[Dd]ebug/
+[Rr]elease/
+build/
+[Bb]in/
+[Oo]bj/
 *.suo
+*.sln.cache
+_ReSharper.*/
+*.user
+*.ncrunchsolution
 
 
 
