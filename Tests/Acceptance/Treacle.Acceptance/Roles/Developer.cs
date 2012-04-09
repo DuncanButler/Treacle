@@ -8,6 +8,7 @@ namespace Treacle.Acceptance.Roles
     public class Developer : ApplicationRole
     {
         DbGatewayFactory _dbGatewayFactory;
+        object _resultOfPreviousCall;
 
         public Developer()
         {
@@ -29,14 +30,21 @@ namespace Treacle.Acceptance.Roles
             Gateway = _dbGatewayFactory.Create();
         }
 
-        public void AddParameter(string parameterName, int value)
-        {
-            Gateway.AddIntegerInputParameter(parameterName, value);
-        }
+        
 
         public ConnectionState DatabaseConnectionClosed()
         {
             return Gateway.Connection.State;
+        }
+
+        public void ExecuteScaller(string procedureName)
+        {
+            _resultOfPreviousCall = Gateway.ExecuteScaller(procedureName);
+        }
+
+        public object ResultOfPreviousCall()
+        {
+            return _resultOfPreviousCall;
         }
     }
 }

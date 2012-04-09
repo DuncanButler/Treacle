@@ -54,5 +54,10 @@ namespace Treacle
         {
             get { return _connection; }
         }
+
+        public object ExecuteScaller(string procedureName)
+        {
+            return null;
+        }
     }
 }

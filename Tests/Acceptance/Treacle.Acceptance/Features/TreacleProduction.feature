@@ -26,7 +26,7 @@ Scenario: calling a stored procedure that returns nothing
 	Given I am a developer
 	And I did create a gateway factory
 	And I did create a database gateway
-	And I did add a parameter containing, parameterName '@name' parameterValue 'test'
+	And I did add a parameter containing, parameterName '@name' parameterValue 'test' type 'string'
 	When I attempt to execute the procedure, procedureName 'spNonQuery'
 	Then I should see that the database is updated with 'test'
 	And I should see that the gateway connection is 'Closed'
@@ -36,8 +36,9 @@ Scenario: calling a stored procedure that returns a single result
 	Given I am a developer
 	And I did create a gateway factory
 	And I did create a database gateway
-	When I execute scaller the procedure, name 'spScaller'
-	Then I should see the result 'expected'
+	And I did add a parameter containing, parameterName '@Id', parameterValue '1' type 'integer'
+	When I attempt to execute a scaller procedure, name 'spScaller'
+	Then I should see the result 'test'
 	And I should see that the gateway connection is 'closed'
 
 @TreacleDBGateway

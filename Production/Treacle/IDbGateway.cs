@@ -11,5 +11,6 @@ namespace Treacle
      
         void ExecuteNonQuery(string procedureName);
         IDbConnection Connection { get; }
+        object ExecuteScaller(string procedureName);
     }
 }

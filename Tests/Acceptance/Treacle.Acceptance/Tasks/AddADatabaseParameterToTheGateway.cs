@@ -6,8 +6,10 @@ namespace Treacle.Acceptance.Tasks
     {
         public override object Perform_Task()
         {
-            Role.AddParameter("@test",1);
+            IDbGateway gateway = Role.Gateway;
 
+            gateway.AddIntegerInputParameter("@test",1);
+            
             return null;
         }
     }

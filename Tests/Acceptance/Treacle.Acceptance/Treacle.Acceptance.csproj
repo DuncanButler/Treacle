@@ -83,11 +83,13 @@
     <Compile Include="Tasks\AddAParameterContaining.cs" />
     <Compile Include="Tasks\CreateADatabaseGateway.cs" />
     <Compile Include="Tasks\CreateAGatewayFactory.cs" />
+    <Compile Include="Tasks\ExecuteAScallerProcedure.cs" />
     <Compile Include="Tasks\ExecuteTheProcedure.cs" />
     <Compile Include="Tasks\HaveCreated.cs" />
     <Compile Include="Tasks\SeeThatTheDatabaseIsUpdatedWith.cs" />
     <Compile Include="Tasks\SeeThatTheGatewayConnectionIs.cs" />
     <Compile Include="Tasks\SeeTheGatewayParametersCount.cs" />
+    <Compile Include="Tasks\SeeTheResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,8 +10,13 @@ namespace Treacle.Acceptance.Tasks
 
             string name = this.Details.Value_Of("parameterName");
             string value = Details.Value_Of("parameterValue");
+            string type = Details.Value_Of("type");
 
-            gateway.AddVarCharInputParameter(name,value,value.Length);
+            if (type == "string")
+                gateway.AddVarCharInputParameter(name, value, value.Length);
+
+            if (type == "int")
+                gateway.AddIntegerInputParameter(name, int.Parse(value));
 
             return null;
         }
