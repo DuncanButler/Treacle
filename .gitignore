@@ -9,6 +9,11 @@ build/
 _ReSharper.*/
 *.user
 *.ncrunchsolution
+*.ncrunchsolution.cache
+*.ncrunchsolution.user
+*.DotSettings.user
+*.suo
+
 
 
 
