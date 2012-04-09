@@ -36,10 +36,11 @@ Scenario: calling a stored procedure that returns a single result
 	Given I am a developer
 	And I did create a gateway factory
 	And I did create a database gateway
-	And I did add a parameter containing, parameterName '@Id', parameterValue '1' type 'integer'
-	When I attempt to execute a scaller procedure, name 'spScaller'
+	And I did add data to the database
+	And I did add a parameter containing, parameterName '@Id' parameterValue '1' type 'integer'
+	When I attempt to execute a scaller procedure, name 'spExecuteScaller'
 	Then I should see the result 'test'
-	And I should see that the gateway connection is 'closed'
+	And I should see that the gateway connection is 'Closed'
 
 @TreacleDBGateway
 Scenario: calling a stored procedure that returns multiple rows

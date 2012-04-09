@@ -6,4 +6,7 @@
       <Column Name="Name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.spTruncate" Method="spTruncate">
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

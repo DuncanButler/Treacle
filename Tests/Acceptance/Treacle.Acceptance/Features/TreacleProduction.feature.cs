@@ -159,14 +159,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 38
  testRunner.And("I did create a database gateway");
 #line 39
- testRunner.And("I did add a parameter containing, parameterName \'@Id\', parameterValue \'1\' type \'i" +
-                    "nteger\'");
+ testRunner.And("I did add data to the database");
 #line 40
- testRunner.When("I attempt to execute a scaller procedure, name \'spScaller\'");
+ testRunner.And("I did add a parameter containing, parameterName \'@Id\' parameterValue \'1\' type \'in" +
+                    "teger\'");
 #line 41
- testRunner.Then("I should see the result \'test\'");
+ testRunner.When("I attempt to execute a scaller procedure, name \'spExecuteScaller\'");
 #line 42
- testRunner.And("I should see that the gateway connection is \'closed\'");
+ testRunner.Then("I should see the result \'test\'");
+#line 43
+ testRunner.And("I should see that the gateway connection is \'Closed\'");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -178,19 +180,19 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("calling a stored procedure that returns multiple rows", new string[] {
                         "TreacleDBGateway"});
-#line 45
-this.ScenarioSetup(scenarioInfo);
 #line 46
- testRunner.Given("I am a developer");
+this.ScenarioSetup(scenarioInfo);
 #line 47
- testRunner.And("I did create a gateway factory");
+ testRunner.Given("I am a developer");
 #line 48
- testRunner.And("I did create a database gateway");
+ testRunner.And("I did create a gateway factory");
 #line 49
- testRunner.When("I execute the procedure, name \'spReaderResult\'");
+ testRunner.And("I did create a database gateway");
 #line 50
- testRunner.Then("I should have received \'an IDbReader object\'");
+ testRunner.When("I execute the procedure, name \'spReaderResult\'");
 #line 51
+ testRunner.Then("I should have received \'an IDbReader object\'");
+#line 52
  testRunner.And("I should see that the gateway connection is \'open\'");
 #line hidden
             this.ScenarioCleanup();

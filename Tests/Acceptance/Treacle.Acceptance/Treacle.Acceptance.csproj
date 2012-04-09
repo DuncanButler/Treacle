@@ -81,6 +81,7 @@
     <Compile Include="Roles\Developer.cs" />
     <Compile Include="Tasks\AddADatabaseParameterToTheGateway.cs" />
     <Compile Include="Tasks\AddAParameterContaining.cs" />
+    <Compile Include="Tasks\AddDataToTheDatabase.cs" />
     <Compile Include="Tasks\CreateADatabaseGateway.cs" />
     <Compile Include="Tasks\CreateAGatewayFactory.cs" />
     <Compile Include="Tasks\ExecuteAScallerProcedure.cs" />

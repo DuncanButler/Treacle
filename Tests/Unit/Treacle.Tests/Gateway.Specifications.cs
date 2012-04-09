@@ -16,9 +16,7 @@ namespace Treacle.Tests
             _gateway = new DataGateway(connectionString);
 
             using (var dc = new TestDataRepositoryDataContext())
-            {
-                dc.ClearData();
-            }
+                dc.spTruncate();
         }
     }
 
@@ -46,6 +44,34 @@ namespace Treacle.Tests
 
                 result.Count().IsEqualTo(1);
             }
+        }
+    }
+
+    [TestFixture]
+    public class calling_execute_scaller : gateway_context
+    {
+        string _result;
+
+        protected override void EstablishContext()
+        {
+            base.EstablishContext();
+
+            _gateway.AddVarCharInputParameter("@name", "Test", 4);
+            _gateway.ExecuteNonQuery("spNonQuery");
+            _gateway.Parameters.Clear();
+
+            _gateway.AddIntegerInputParameter("@Id", 1);
+        }
+
+        protected override void BecauseOf()
+        {
+            _result = (string) _gateway.ExecuteScaller("spExecuteScaller");
+        }
+
+        [Test]
+        public void the_result_contains_the_expected_result()
+        {
+            _result.Trim().IsEqualTo("Test");
         }
     }
 }

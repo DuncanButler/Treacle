@@ -15,7 +15,7 @@ namespace Treacle.Acceptance.Tasks
             if (type == "string")
                 gateway.AddVarCharInputParameter(name, value, value.Length);
 
-            if (type == "int")
+            if (type == "integer")
                 gateway.AddIntegerInputParameter(name, int.Parse(value));
 
             return null;

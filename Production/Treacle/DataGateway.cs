@@ -8,16 +8,18 @@ namespace Treacle
     public class DataGateway : IDbGateway
     {
         readonly string _connectionString;
-        SqlConnection _connection;
 
         public DataGateway(string connectionString)
         {
             _connectionString = connectionString;
+            
             Parameters = new List<IDataParameter>();
         }
 
         public IList<IDataParameter> Parameters { get; private set; }
-        
+
+        public IDbConnection Connection { get; private set; }
+
         public void AddIntegerInputParameter(string name, int value)
         {
             Parameters.Add(new SqlParameter(name, SqlDbType.Int) {Value = value, Direction = ParameterDirection.Input});
@@ -35,29 +37,66 @@ namespace Treacle
 
         public void ExecuteNonQuery(string procedureName)
         {
-            _connection = new SqlConnection(_connectionString);
-            var command = _connection.CreateCommand();
-            command.CommandText = procedureName;
-            command.CommandType = CommandType.StoredProcedure;
+            CreateConnection();
 
-            foreach (var parameter in Parameters)
-            {
-                command.Parameters.Add(parameter);
-            }
+            var command = CreateCommand(procedureName);
 
-            _connection.Open();
+            AddParameters(command);
+
+            OpenConnection();
+
             command.ExecuteNonQuery();
-            _connection.Close();
-        }
-
-        public IDbConnection Connection
-        {
-            get { return _connection; }
+            
+            CloseConnection();
         }
 
         public object ExecuteScaller(string procedureName)
         {
-            return null;
+            CreateConnection();
+
+            var command = CreateCommand(procedureName);
+
+            AddParameters(command);
+
+            OpenConnection();
+            
+            var scalar = command.ExecuteScalar();
+            
+            CloseConnection();
+
+            return scalar;
+        }
+
+        void CreateConnection()
+        {
+            Connection = new SqlConnection(_connectionString);
+        }
+
+        void AddParameters(IDbCommand command)
+        {
+            foreach (var parameter in Parameters)
+            {
+                command.Parameters.Add(parameter);
+            }
+        }
+
+        IDbCommand CreateCommand(string procedureName)
+        {
+            var command = Connection.CreateCommand();
+            command.CommandText = procedureName;
+            command.CommandType = CommandType.StoredProcedure;
+            
+            return command;
+        }
+
+        void OpenConnection()
+        {
+            Connection.Open();
+        }
+
+        void CloseConnection()
+        {
+            Connection.Close();
         }
     }
 }
