@@ -1,7 +1,12 @@
-Resharper*
-Bin
-Obj
-_resharper.*
+ReSharper*
+Bin/
+debug/
+Obj/
+
+_ReSharper.*
 *.ncrunchsolution
+*.suo
+
+
 
 
