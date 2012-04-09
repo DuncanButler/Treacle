@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{548877D0-7D4A-4011-8931-96CE0CA4647C}</ProjectGuid>
+    <ProjectGuid>{896A3E16-46C3-4AB0-A3F3-90AE7AA2A431}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Treacle.Tests</RootNamespace>
-    <AssemblyName>Treacle.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>TestRepository</RootNamespace>
+    <AssemblyName>TestRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -45,24 +40,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddParameters.Specifications.cs" />
-    <Compile Include="BaseTest.cs" />
-    <Compile Include="Gateway.Specifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataRepository.cs">
+      <DependentUpon>TestDataRepository.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataRepository.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataRepository.dbml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TestDataRepository.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TestDataRepository.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Production\Treacle\Treacle.csproj">
-      <Project>{3673DD9A-0FC0-4D91-8ABE-E714324091C4}</Project>
-      <Name>Treacle</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\TestDatabase\TestRepository\TestRepository.csproj">
-      <Project>{896a3e16-46c3-4ab0-a3f3-90ae7aa2a431}</Project>
-      <Name>TestRepository</Name>
-    </ProjectReference>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDataRepository.dbml.layout">
+      <DependentUpon>TestDataRepository.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using SpecSalad;
+using TestRepository;
 using Treacle.Tests;
 
 namespace Treacle.Acceptance.Tasks
@@ -7,12 +8,12 @@ namespace Treacle.Acceptance.Tasks
     public class SeeThatTheDatabaseIsUpdatedWith : ApplicationTask
     {
         public override object Perform_Task()
-        {            
-            using (var db = new TestDatabaseDataContext())
+        {
+            using (var db = new TestDataRepositoryDataContext())
             {
-                Table results = (from t in db.Tables select t).FirstOrDefault();
+                TestData results = (from t in db.TestDatas select t).FirstOrDefault();
 
-                return results.Name;
+                return results.Name.Trim();
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 
 namespace Treacle
@@ -6,6 +7,9 @@ namespace Treacle
     {
         void AddIntegerInputParameter(string name, int value);
         void AddVarCharInputParameter(string name, string value, int length);
+        void AddDateTimeInputParameter(string name, DateTime value);
+     
         void ExecuteNonQuery(string procedureName);
+        IDbConnection Connection { get; }
     }
 }

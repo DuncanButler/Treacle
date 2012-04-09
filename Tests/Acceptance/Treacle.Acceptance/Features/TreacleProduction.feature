@@ -27,9 +27,9 @@ Scenario: calling a stored procedure that returns nothing
 	And I did create a gateway factory
 	And I did create a database gateway
 	And I did add a parameter containing, parameterName '@name' parameterValue 'test'
-	When I attempt to execute the procedure, procedureName 'spInsertName'
-	Then I should see that the database is updated with 'the name Duncan'
-	And I should see that the gateway connection is 'closed'
+	When I attempt to execute the procedure, procedureName 'spNonQuery'
+	Then I should see that the database is updated with 'test'
+	And I should see that the gateway connection is 'Closed'
 
 @TreacleDBGateway
 Scenario: calling a stored procedure that returns a single result

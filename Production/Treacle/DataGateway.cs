@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +8,7 @@ namespace Treacle
     public class DataGateway : IDbGateway
     {
         readonly string _connectionString;
+        SqlConnection _connection;
 
         public DataGateway(string connectionString)
         {
@@ -26,21 +28,31 @@ namespace Treacle
             Parameters.Add(new SqlParameter(name, SqlDbType.NVarChar,length){Value = value,Direction = ParameterDirection.Input});
         }
 
+        public void AddDateTimeInputParameter(string name, DateTime value)
+        {
+            Parameters.Add(new SqlParameter(name,SqlDbType.DateTime){Value = value,Direction = ParameterDirection.Input});
+        }
+
         public void ExecuteNonQuery(string procedureName)
         {
-            //var connection = new SqlConnection(_connectionString);
-            //var command = connection.CreateCommand();
-            //command.CommandText = procedureName;
-            //command.CommandType = CommandType.StoredProcedure;
+            _connection = new SqlConnection(_connectionString);
+            var command = _connection.CreateCommand();
+            command.CommandText = procedureName;
+            command.CommandType = CommandType.StoredProcedure;
 
-            //foreach (var parameter in Parameters)
-            //{
-            //    command.Parameters.Add(parameter);
-            //}
+            foreach (var parameter in Parameters)
+            {
+                command.Parameters.Add(parameter);
+            }
 
-            //connection.Open();
-            //command.ExecuteNonQuery();
-            //connection.Close();
+            _connection.Open();
+            command.ExecuteNonQuery();
+            _connection.Close();
+        }
+
+        public IDbConnection Connection
+        {
+            get { return _connection; }
         }
     }
 }

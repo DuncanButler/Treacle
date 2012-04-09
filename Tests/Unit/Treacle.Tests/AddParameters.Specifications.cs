@@ -1,9 +1,44 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using NUnit.Framework;
 
 namespace Treacle.Tests
 {
+    [TestFixture]
+    public class adding_date_time_parameters_to_the_gateway : adding_parameters_context
+    {        
+        protected override void BecauseOf()
+        {
+            _gateway.AddDateTimeInputParameter(_name, _dateTimeValue);
+        }
+
+        [Test]
+        public void adds_a_parameter_with_the_correct_name()
+        {
+            ((DataGateway)_gateway).Parameters[0].ParameterName.IsEqualTo(_name);
+        }
+
+        [Test]
+        public void adds_a_parameter_with_the_correct_value()
+        {
+            ((DataGateway)_gateway).Parameters[0].Value.IsEqualTo(_dateTimeValue);
+        }
+
+        [Test]
+        public void adds_a_parameter_with_the_correct_sql_type()
+        {
+            ((DataGateway)_gateway).Parameters[0].DbType.IsEqualTo(DbType.DateTime);
+        }
+
+        [Test]
+        public void adds_a_parameter_with_the_correct_parameter_direction()
+        {
+            ((DataGateway)_gateway).Parameters[0].Direction.IsEqualTo(ParameterDirection.Input);
+        }
+    }
+
+    [TestFixture]
     public class adding_string_parameters_to_the_gateway : adding_parameters_context
     {
         protected override void BecauseOf()
@@ -44,6 +79,7 @@ namespace Treacle.Tests
         }
     }
 
+    [TestFixture]
     public class adding_int_parameters_to_the_gateway : adding_parameters_context
     {
         protected override void BecauseOf()
@@ -82,6 +118,7 @@ namespace Treacle.Tests
         protected string _name;
         protected int _intValue;
         protected string _stringValue;
+        protected DateTime _dateTimeValue;
 
         protected adding_parameters_context()
         {
@@ -96,6 +133,7 @@ namespace Treacle.Tests
             _name = "@test";
             _intValue = 1;
             _stringValue = "one";
+            _dateTimeValue = DateTime.Now;
         }
     }
 }

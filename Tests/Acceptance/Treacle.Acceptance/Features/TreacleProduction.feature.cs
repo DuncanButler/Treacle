@@ -133,11 +133,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 29
  testRunner.And("I did add a parameter containing, parameterName \'@name\' parameterValue \'test\'");
 #line 30
- testRunner.When("I attempt to execute the procedure, procedureName \'spInsertName\'");
+ testRunner.When("I attempt to execute the procedure, procedureName \'spNonQuery\'");
 #line 31
- testRunner.Then("I should see that the database is updated with \'the name Duncan\'");
+ testRunner.Then("I should see that the database is updated with \'test\'");
 #line 32
- testRunner.And("I should see that the gateway connection is \'closed\'");
+ testRunner.And("I should see that the gateway connection is \'Closed\'");
 #line hidden
             this.ScenarioCleanup();
         }

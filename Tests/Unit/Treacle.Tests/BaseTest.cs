@@ -43,7 +43,7 @@ namespace Treacle.Tests
         }
     }
 
-    public static class BDDAssertions
+    public static class BddAssertions
     {
          public static void IsEqualTo<T>(this T actual, T expected)
          {

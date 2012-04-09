@@ -86,12 +86,8 @@
     <Compile Include="Tasks\ExecuteTheProcedure.cs" />
     <Compile Include="Tasks\HaveCreated.cs" />
     <Compile Include="Tasks\SeeThatTheDatabaseIsUpdatedWith.cs" />
+    <Compile Include="Tasks\SeeThatTheGatewayConnectionIs.cs" />
     <Compile Include="Tasks\SeeTheGatewayParametersCount.cs" />
-    <Compile Include="TestDatabase.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestDatabase.dbml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -104,16 +100,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="TestDatabase.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TestDatabase.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Production\Treacle\Treacle.csproj">
       <Project>{3673DD9A-0FC0-4D91-8ABE-E714324091C4}</Project>
       <Name>Treacle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TestDatabase\TestRepository\TestRepository.csproj">
+      <Project>{896a3e16-46c3-4ab0-a3f3-90ae7aa2a431}</Project>
+      <Name>TestRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Unit\Treacle.Tests\Treacle.Tests.csproj">
       <Project>{548877D0-7D4A-4011-8931-96CE0CA4647C}</Project>
@@ -139,11 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TestDatabase.dbml.layout">
-      <DependentUpon>TestDatabase.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
