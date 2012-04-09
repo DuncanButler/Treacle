@@ -10,3 +10,4 @@ C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\Treacle.pdb
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\Treacle.Tests.dll.config
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\TestRepository.dll
 C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\TestRepository.pdb
+C:\@Source\Treacle\Tests\Unit\Treacle.Tests\bin\Debug\SpecSalad.dll

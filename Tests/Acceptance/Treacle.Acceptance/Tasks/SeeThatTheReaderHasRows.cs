@@ -2,11 +2,11 @@
 
 namespace Treacle.Acceptance.Tasks
 {
-    public class SeeThatTheGatewayConnectionIs : ApplicationTask
+    public class SeeThatTheReaderHasRows : ApplicationTask
     {
         public override object Perform_Task()
         {
-            return Role.ConnectionState;
+            return Role.ReaderResult.HasRows;
         }
     }
 }

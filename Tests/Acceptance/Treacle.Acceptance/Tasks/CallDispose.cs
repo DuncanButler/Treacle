@@ -2,11 +2,13 @@
 
 namespace Treacle.Acceptance.Tasks
 {
-    public class SeeThatTheGatewayConnectionIs : ApplicationTask
+    public class CallDispose : ApplicationTask
     {
         public override object Perform_Task()
         {
-            return Role.ConnectionState;
+            Role.CallDispose();
+
+            return null;
         }
     }
 }

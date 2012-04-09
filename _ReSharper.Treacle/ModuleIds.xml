@@ -1,7 +1,6 @@
 <Modules>
   <Module PersistentId="3673DD9A-0FC0-4D91-8ABE-E714324091C4" ModuleId="Treacle" />
   <Module PersistentId="548877D0-7D4A-4011-8931-96CE0CA4647C" ModuleId="Treacle.Tests" />
-  <Module PersistentId="666ACCB5-1B49-4D46-8FB6-E82448F061D3" ModuleId="Treacle.Tasks" />
   <Module PersistentId="46C97E8E-DDF0-4B98-A153-B5FBB3DCAC28" ModuleId="Treacle.Acceptance" />
   <Module PersistentId="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System" />
   <Module PersistentId="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Core" />
@@ -59,48 +58,19 @@
   <Module PersistentId="Treacle.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Treacle.Tests_1" />
   <Module PersistentId="Treacle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Treacle_1" />
   <Module PersistentId="Treacle.Acceptance, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Treacle.Acceptance_1" />
-  <Module PersistentId="Treacle.Tasks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="Treacle.Tasks_1" />
   <Module PersistentId="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.Linq" />
   <Module PersistentId="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.ComponentModel.DataAnnotations" />
   <Module PersistentId="896A3E16-46C3-4AB0-A3F3-90AE7AA2A431" ModuleId="TestRepository_1" />
+  <Module PersistentId="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.Entity" />
+  <Module PersistentId="TestRepository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="TestRepository" />
   <Module PersistentId="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System_2" />
   <Module PersistentId="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Core_2" />
+  <Module PersistentId="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.Linq_1" />
   <Module PersistentId="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xml.Linq_2" />
   <Module PersistentId="System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.DataSetExtensions_1" />
   <Module PersistentId="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Microsoft.CSharp_1" />
   <Module PersistentId="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data_1" />
   <Module PersistentId="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xml_2" />
   <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib_2" />
-  <Module PersistentId="System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Configuration_2" />
-  <Module PersistentId="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.Linq_1" />
-  <Module PersistentId="System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Security_2" />
-  <Module PersistentId="System.Numerics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Numerics_1" />
-  <Module PersistentId="System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Runtime.Serialization_1" />
-  <Module PersistentId="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Transactions_1" />
-  <Module PersistentId="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.EnterpriseServices_1" />
-  <Module PersistentId="System.Data.SqlXml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.SqlXml_2" />
-  <Module PersistentId="System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.DirectoryServices_1" />
-  <Module PersistentId="System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Runtime.Remoting_1" />
-  <Module PersistentId="System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xaml_1" />
-  <Module PersistentId="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web_1" />
-  <Module PersistentId="System.Runtime.Serialization.Formatters.Soap, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Runtime.Serialization.Formatters.Soap_1" />
-  <Module PersistentId="Microsoft.Build.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Microsoft.Build.Framework_1" />
-  <Module PersistentId="System.Runtime.Caching, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Runtime.Caching_1" />
-  <Module PersistentId="System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Web.ApplicationServices_1" />
-  <Module PersistentId="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Drawing_1" />
-  <Module PersistentId="System.Web.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web.Services_1" />
-  <Module PersistentId="Microsoft.Build.Utilities.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Microsoft.Build.Utilities.v4.0_1" />
-  <Module PersistentId="System.DirectoryServices.Protocols, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.DirectoryServices.Protocols_1" />
-  <Module PersistentId="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Design_1" />
-  <Module PersistentId="Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Microsoft.Build.Tasks.v4.0_1" />
-  <Module PersistentId="System.ServiceProcess, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.ServiceProcess_1" />
-  <Module PersistentId="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Windows.Forms_1" />
-  <Module PersistentId="System.Web.RegularExpressions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web.RegularExpressions_1" />
-  <Module PersistentId="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.Entity" />
-  <Module PersistentId="System.Drawing.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Drawing.Design_1" />
-  <Module PersistentId="System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Data.OracleClient_1" />
-  <Module PersistentId="Accessibility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Accessibility_1" />
-  <Module PersistentId="System.Configuration.Install, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Configuration.Install_1" />
-  <Module PersistentId="System.Deployment, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Deployment_1" />
-  <Module PersistentId="TestRepository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="TestRepository" />
+  <Module PersistentId="666ACCB5-1B49-4D46-8FB6-E82448F061D3" ModuleId="Treacle.Tasks" />
 </Modules>

@@ -1,4 +1,6 @@
 ﻿using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using NUnit.Framework;
 using TestRepository;
@@ -18,6 +20,14 @@ namespace Treacle.Tests
             using (var dc = new TestDataRepositoryDataContext())
                 dc.spTruncate();
         }
+
+        protected void AddDataToDatabase()
+        {
+            _gateway.AddVarCharInputParameter("@name", "Test 1", 4);
+            _gateway.ExecuteNonQuery("spNonQuery");
+
+            _gateway.Parameters.Clear();
+        }
     }
 
     [TestFixture]
@@ -36,7 +46,7 @@ namespace Treacle.Tests
         }
 
         [Test]
-        public void Adds_a_row_to_the_table()
+        public void adds_a_row_to_the_table()
         {
             using (var dc = new TestDataRepositoryDataContext())
             {
@@ -56,12 +66,11 @@ namespace Treacle.Tests
         {
             base.EstablishContext();
 
-            _gateway.AddVarCharInputParameter("@name", "Test", 4);
-            _gateway.ExecuteNonQuery("spNonQuery");
-            _gateway.Parameters.Clear();
+            AddDataToDatabase();
 
             _gateway.AddIntegerInputParameter("@Id", 1);
         }
+
 
         protected override void BecauseOf()
         {
@@ -72,6 +81,54 @@ namespace Treacle.Tests
         public void the_result_contains_the_expected_result()
         {
             _result.Trim().IsEqualTo("Test");
+        }
+    }
+
+    [TestFixture]
+    public class calling_select_query : gateway_context
+    {
+        IDataReader _dataReader;
+
+        protected override void EstablishContext()
+        {
+            base.EstablishContext();
+
+            AddDataToDatabase();
+        }
+
+        protected override void BecauseOf()
+        {
+            _dataReader = _gateway.ExecuteSP("spSelect");
+        }
+
+        [Test]
+        public void returns_a_datareader()
+        {
+            ((SqlDataReader)_dataReader).HasRows.IsTrue();
+        }
+    }
+
+    [TestFixture]
+    class calling_dispose_closes_any_open_connection : gateway_context
+    {
+        protected override void EstablishContext()
+        {
+            base.EstablishContext();
+
+            _gateway.ExecuteSP("spSelect");
+            
+            _gateway.Connection.State.IsEqualTo(ConnectionState.Open);
+        }
+
+        protected override void BecauseOf()
+        {
+            _gateway.Dispose();
+        }
+
+        [Test]
+        public void connection_is_closed()
+        {
+            _gateway.Connection.State.IsEqualTo(ConnectionState.Closed);        
         }
     }
 }

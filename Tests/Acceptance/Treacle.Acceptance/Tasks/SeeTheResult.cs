@@ -6,7 +6,7 @@ namespace Treacle.Acceptance.Tasks
     {
         public override object Perform_Task()
         {
-            return Role.ResultOfPreviousCall();
+            return Role.StringResult.Trim();
         }
     }
 }

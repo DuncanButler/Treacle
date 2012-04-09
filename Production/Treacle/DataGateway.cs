@@ -67,6 +67,19 @@ namespace Treacle
             return scalar;
         }
 
+        public IDataReader ExecuteSP(string procedureName)
+        {
+            CreateConnection();
+
+            var command = CreateCommand(procedureName);
+
+            AddParameters(command);
+
+            OpenConnection();
+
+            return command.ExecuteReader();
+        }
+
         void CreateConnection()
         {
             Connection = new SqlConnection(_connectionString);
@@ -95,6 +108,15 @@ namespace Treacle
         }
 
         void CloseConnection()
+        {
+            if (Connection == null) 
+                return;
+
+            if (Connection.State != ConnectionState.Closed)
+                Connection.Close();
+        }
+
+        public void Dispose()
         {
             Connection.Close();
         }

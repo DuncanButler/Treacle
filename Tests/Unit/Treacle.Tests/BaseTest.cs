@@ -54,5 +54,10 @@ namespace Treacle.Tests
          {
              Assert.That(actual,Is.GreaterThan(expected));
          }
+
+         public static void IsTrue(this bool actual)
+         {
+             Assert.That(actual,Is.True);
+         }
     }
 }

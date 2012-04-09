@@ -189,11 +189,40 @@ this.ScenarioSetup(scenarioInfo);
 #line 49
  testRunner.And("I did create a database gateway");
 #line 50
- testRunner.When("I execute the procedure, name \'spReaderResult\'");
+ testRunner.And("I did add data to the database");
 #line 51
- testRunner.Then("I should have received \'an IDbReader object\'");
+ testRunner.When("I attempt to execute a select procedure, name \'spSelect\'");
 #line 52
- testRunner.And("I should see that the gateway connection is \'open\'");
+ testRunner.Then("I should have received an object of type \'System.Data.SqlClient.SqlDataReader\'");
+#line 53
+ testRunner.And("I should see that the gateway connection is \'Open\'");
+#line 54
+ testRunner.And("I should see that the reader has rows");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("calling dispose closes any open connections")]
+        [NUnit.Framework.CategoryAttribute("TreacleDBGateway")]
+        public virtual void CallingDisposeClosesAnyOpenConnections()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("calling dispose closes any open connections", new string[] {
+                        "TreacleDBGateway"});
+#line 57
+this.ScenarioSetup(scenarioInfo);
+#line 58
+ testRunner.Given("I am a developer");
+#line 59
+ testRunner.And("I did create a gateway factory");
+#line 60
+ testRunner.And("I did create a database gateway");
+#line 61
+ testRunner.And("I did execute a select procedure, name \'spSelect\'");
+#line 62
+ testRunner.When("I attempt to call dispose");
+#line 63
+ testRunner.Then("I should see that the gateway connection is \'Closed\'");
 #line hidden
             this.ScenarioCleanup();
         }

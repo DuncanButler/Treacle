@@ -47,6 +47,17 @@ Scenario: calling a stored procedure that returns multiple rows
 	Given I am a developer
 	And I did create a gateway factory
 	And I did create a database gateway
-	When I execute the procedure, name 'spReaderResult'
-	Then I should have received 'an IDbReader object'
-	And I should see that the gateway connection is 'open'
+	And I did add data to the database
+	When I attempt to execute a select procedure, name 'spSelect'
+	Then I should have received an object of type 'System.Data.SqlClient.SqlDataReader'
+	And I should see that the gateway connection is 'Open'
+	And I should see that the reader has rows
+
+@TreacleDBGateway
+Scenario: calling dispose closes any open connections
+	Given I am a developer
+	And I did create a gateway factory
+	And I did create a database gateway
+	And I did execute a select procedure, name 'spSelect'
+	When I attempt to call dispose
+	Then I should see that the gateway connection is 'Closed'

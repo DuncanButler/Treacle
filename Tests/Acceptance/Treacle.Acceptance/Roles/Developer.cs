@@ -8,13 +8,17 @@ namespace Treacle.Acceptance.Roles
     public class Developer : ApplicationRole
     {
         DbGatewayFactory _dbGatewayFactory;
-        string _resultOfPreviousCall;
-
+        
         public Developer()
         {
             using (var dc = new TestDataRepositoryDataContext())
                 dc.spTruncate();
         }
+
+        public IDbGateway Gateway { get; set; }
+        public string StringResult { get; private set; }
+        public IDataReader ReaderResult { get; private set; }
+        public ConnectionState ConnectionState { get { return Gateway.Connection.State; } }
 
         public void CreateGatewayFactory()
         {
@@ -23,26 +27,24 @@ namespace Treacle.Acceptance.Roles
             _dbGatewayFactory = new DbGatewayFactory(connectionString);
         }
 
-        public IDbGateway Gateway { get; set; }
-
         public void CreateDatabaseGateway()
         {
             Gateway = _dbGatewayFactory.Create();
         }
 
-        public ConnectionState DatabaseConnectionClosed()
-        {
-            return Gateway.Connection.State;
-        }
-
         public void ExecuteScaller(string procedureName)
         {
-            _resultOfPreviousCall = (string) Gateway.ExecuteScaller(procedureName);
+            StringResult = (string)Gateway.ExecuteScaller(procedureName);
         }
 
-        public string ResultOfPreviousCall()
+        public void ExecuteSelect(string procedureName)
         {
-            return _resultOfPreviousCall.Trim();
+            ReaderResult = Gateway.ExecuteSP(procedureName);
+        }
+
+        public void CallDispose()
+        {
+            Gateway.Dispose();
         }
     }
 }
